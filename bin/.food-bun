@@ -1,0 +1,2 @@
+#!/bin/bash
+.food BUN=$1 each=\$0.50

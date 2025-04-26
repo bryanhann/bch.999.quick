@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+case .$1 in
+    .18|.36|.54 ) .med "concerta=$1" ;;
+    *       ) echo BAD VALUE ;;
+esac
+

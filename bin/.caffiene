@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+case $1. in
+    100.|200.)
+        .med caffeine=$1
+        ;;
+    *)
+        echo BAD VALUE
+        ;;
+esac

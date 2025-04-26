@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+[ $1. == . ] && echo name needed
+[ $1. == . ] && exit
+
+uv init $1
+cd $1
+mkdir ./tests
+cat > ./tests/test_dummy.py << HEREDOC
+#!/usr/bin/env python3
+def test():
+    pass
+HEREDOC
+chmod +x ./tests/dummy.py
+uv add bh-bump
+uv add pytest
+echo >> ./.gitignore
+echo '__pycache__' >> ./.gitignore
+rm ./hello.py
+uv run bh-bump init

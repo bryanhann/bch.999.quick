@@ -1,0 +1,4 @@
+#!/bin/bash
+.food-bun $1
+.food-cpatty $1
+.food "chicken burger"

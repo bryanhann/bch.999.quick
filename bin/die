@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+cat <<HEREDOC
+Usage: die [--clear] [-h|--help]
+
+Touch the file [~/die]. The existance of this file is
+a signal to some errant server processes to exit with
+extreme prejudice.
+HEREDOC
+
+[ $1. == -h. ] && exit
+[ $1. == --help. ] && exit
+
+echo
+echo 'touching file [~/die].'
+touch ~/die

@@ -1,0 +1,5 @@
+#!/bin/bash
+.med \
+    AM: \
+    concerta=18
+

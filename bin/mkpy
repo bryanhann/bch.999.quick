@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+bh mk py $1
