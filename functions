@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+#---------------------------------------------------------------------------
+# go to the directory of an executable file on path
+#---------------------------------------------------------------------------
+
+.go () {
+    local xx
+    for xx in . .-h .--help; do
+        [ $xx == .${1} ] && {
+            echo usage: .go NAME
+            echo
+            echo of NAME is found in PATH, pushd to its directory
+            return
+        }
+    done
+    which $1 || { echo not found: $1; return; }
+    pushd $(dirname $(which $1))
+}
+
+#---------------------------------------------------------------------------
+# list all local repos in the usual places.
+# useful for checking status
+#---------------------------------------------------------------------------
+
+git.repos () {
+    for path in $(find ~/prj -name .git); do
+        echo $(dirname $path)
+    done
+    for path in $(find ${__BRYAN_ROOT} -name .git); do
+        echo $(dirname $path)
+    done
+    echo ~/.BRYAN.DOTFILES
+
+}
+
+#---------------------------------------------------------------------------
+# Report status of all repos found by git.repos
+#---------------------------------------------------------------------------
+
+git.status () {
+     for path in $(git.repos); do
+        pushd $path > /dev/null
+        echo "$(__git_ps1)" $PWD
+        popd > /dev/null
+    done
+}
+
+#---------------------------------------------------------------------------
+# pushd to a short link to current directory
+#---------------------------------------------------------------------------
+
+pusht () {
+    case $1. in
+        .|-h|--help)
+            echo "usage: pusht <name>"
+            echo "    pushd to /tmp/<name> --> \${PWD}"
+            echo "    Handy to avoid overly long paths"
+            ;;
+        *)
+            [ "${PWD::4}" == "/tmp" ] && echo alread in a temp link && return
+            [ "${PWD::4}" == "/tmp" ] && return
+            link=/tmp/$1
+            rm $link
+            ln -s ${PWD} ${link} || return
+            pushd ${link}
+    esac
+}
+
