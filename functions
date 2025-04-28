@@ -19,34 +19,6 @@
 }
 
 #---------------------------------------------------------------------------
-# list all local repos in the usual places.
-# useful for checking status
-#---------------------------------------------------------------------------
-
-git.repos () {
-    for path in $(find ~/prj -name .git); do
-        echo $(dirname $path)
-    done
-    for path in $(find ${__BRYAN_ROOT} -name .git); do
-        echo $(dirname $path)
-    done
-    echo ~/.BRYAN.DOTFILES
-
-}
-
-#---------------------------------------------------------------------------
-# Report status of all repos found by git.repos
-#---------------------------------------------------------------------------
-
-git.status () {
-     for path in $(git.repos); do
-        pushd $path > /dev/null
-        echo "$(__git_ps1)" $PWD
-        popd > /dev/null
-    done
-}
-
-#---------------------------------------------------------------------------
 # pushd to a short link to current directory
 #---------------------------------------------------------------------------
 
