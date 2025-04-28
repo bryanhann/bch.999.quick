@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
+alias seagate="/Volumes/SeagateBlue/mirrors/rsync.mirror.pumpkin.py"
 alias prj="pushd ~/prj"
 alias l="ls -G"
 alias ll="ls -1G"
-
+alias bb="bryan_buckets $@"
