@@ -39,3 +39,20 @@ pusht () {
     esac
 }
 
+
+git.status.root () {
+    for name in $(ls -a ${1}); do
+        path=${1}/${name}
+        [ -d ${path}/.git ] || continue
+        pushd ${path} > /dev/null
+        __git_ps1
+        printf "\t${path}\n"
+        popd > /dev/null
+    done
+}
+
+git.status () {
+    git.status.root ~
+    git.status.root ${__BCH_ROOT__}
+    git.status.root ~/prj
+}
