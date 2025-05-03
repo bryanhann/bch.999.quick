@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-export ZJOT_ACC=${BRYAN_ZJOT_ACC}
-bh notes zjot "$@"
