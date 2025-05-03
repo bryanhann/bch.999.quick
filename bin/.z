@@ -1,2 +1,2 @@
 #!/bin/bash
-zjot new -- "$@"
+bch.zjot new -- "$@"
