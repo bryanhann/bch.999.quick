@@ -1,1 +1,6 @@
+#!/usr/bin/env bash
 echo bch is at $0
+echo bch commands:
+for name in $(ls -a $(dirname $0)); do
+    echo "    $name"
+done
