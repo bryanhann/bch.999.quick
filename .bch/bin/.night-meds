@@ -1,10 +1,11 @@
 #!/bin/bash
 .med \
-    [PM-MEDS] \
+    [NIGHT] \
     : ASA=81\
     : omeprazole=20 \
     : atorvastatin=40\
     : mirtazapine=30 \
     : losartan=50 \
+    : insulin_degludec=32 \
     : vitamins "(equate brand: men\'s multivitamin)" \
     : minerals "(jamieson brand: calcium magnesuim D3)"

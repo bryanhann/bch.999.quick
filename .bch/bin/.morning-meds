@@ -1,6 +1,6 @@
 #!/bin/bash
 .med \
-    AM: \
+    [MORNING]: \
     fluoxetine=40 \
     concerta=36
 
