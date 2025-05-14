@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+case .$1 in .-h|.--help)cat<<EOF;return;;esac
+usage:
+    . $(basename ${BASH_SOURCE[0]})
+description:
+    show the status of git repos directly under:
+        ${__BCH_ROOT__}
+        ~/.prj
+        ~
+EOF
+
+. :git.status.root ~
+. :git.status.root ${__BCH_ROOT__}
+. :git.status.root ~/prj
+

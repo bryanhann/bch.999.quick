@@ -1,22 +1,7 @@
 #!/usr/bin/env bash
 
-#---------------------------------------------------------------------------
-# go to the directory of an executable file on path
-#---------------------------------------------------------------------------
+.go () { . :go $* ; }
 
-.go () {
-    local xx
-    for xx in . .-h .--help; do
-        [ $xx == .${1} ] && {
-            echo usage: .go NAME
-            echo
-            echo of NAME is found in PATH, pushd to its directory
-            return
-        }
-    done
-    which $1 || { echo not found: $1; return; }
-    pushd $(dirname $(which $1))
-}
 
 #---------------------------------------------------------------------------
 # pushd to a short link to current directory
@@ -40,19 +25,3 @@ pusht () {
 }
 
 
-git.status.root () {
-    for name in $(ls -a ${1}); do
-        path=${1}/${name}
-        [ -d ${path}/.git ] || continue
-        pushd ${path} > /dev/null
-        __git_ps1
-        printf "\t${path}\n"
-        popd > /dev/null
-    done
-}
-
-git.status () {
-    git.status.root ~
-    git.status.root ${__BCH_ROOT__}
-    git.status.root ~/prj
-}

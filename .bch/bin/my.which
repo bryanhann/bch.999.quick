@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+case .$1 in .|.-h|.--help)cat<<USAGE;exit 88;esac
+usage:
+    [$(basename $0)] wraps [which] but follows symlinks.
+USAGE
+
+pth=$(which $1) || exit 2
+[ -L $pth ] && pth=$(readlink $pth)
+echo $pth
+
