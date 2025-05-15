@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-.go () { . :go $* ; }
-
-
 #---------------------------------------------------------------------------
 # pushd to a short link to current directory
 #---------------------------------------------------------------------------
 
-pusht () {
+:pusht () {
     case $1. in
         .|-h|--help)
             echo "usage: pusht <name>"

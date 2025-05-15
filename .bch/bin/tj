@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# make a jot with tags.
+
+acc=""
+for tag in $*; do
+    acc="$acc {$tag}"
+done
+
+zjot new ${acc}
+

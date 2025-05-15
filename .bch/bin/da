@@ -1,3 +1,0 @@
-cd ~/prj/bh-deedoo
-uv run bh-deedoo --help
-uv run bh-deedoo answer $1
