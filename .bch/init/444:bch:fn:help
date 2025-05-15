@@ -1,0 +1,71 @@
+#!/bin/bash
+: documentation for source script fn:help
+:
+: usage:
+:    . fn:help {function-name}
+:
+:    provide help for function {functiion-name}
+:
+tryfn () {
+    declare -f $1 | bashfn.py
+USAGE
+}
+__bch:fn:help () {
+    case .$1 in .|.-h|.--help)cat<<USAGE;return;esac
+    #:--{function}----------------------------------------------
+    #: usage:
+    #:     ${FUNCNAME} <name>
+    #: description:
+    #:    provide help on function <name> or script <name>
+    #:----------------------------------------------------------
+USAGE
+
+    declare -f $1 > /dev/null && {
+        declare -f $1 | bashfn.py
+        return
+    }
+    echo "[${FUNCNAME}]  in body"
+}
+
+echo 777
+:bch:fn:help () {
+
+    :
+    : syntax:
+    : :::: fn {name}
+    : description:
+    : :::: provide help on function {name} or script {name}
+    :
+    case  .$1 in .|.-h|.--help)
+        ${FUNCNAME} ${FUNCNAME}
+        #bch:fn:help bch:fn:help
+        return
+    esac
+
+    declare -f $1 > /dev/null && {
+        echo ------------------------------------------------
+        declare -f $1 | bashfn.py
+        return
+    }
+    echo "[${FUNCNAME}]  in body"
+}
+
+
+#bch:fn:help $*
+
+
+tryfile () {
+    echo try file $1
+    [ -f $1 ] && cat $1
+
+}
+
+#declare -f $1 > /dev/null && {
+#    [ ! -z $1 ] && declare -f $1 | bashfn.py
+#} || [ -f $1 ] && {
+#    cat $1
+#} || {
+#    echo no
+#}
+
+
