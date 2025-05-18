@@ -1,7 +1,23 @@
 #!/usr/bin/env bash
-alias seagate="/Volumes/SeagateBlue/mirrors/rsync.mirror.pumpkin.py"
-alias prj="pushd ~/prj"
-alias l="ls -G"
-alias ll="ls -1G"
-alias bb="bryan_buckets $@"
-alias gits=". :git.status"
+_alias () {
+    local key=$1; shift;
+    alias $key="$@"
+}
+_alias .bg          zt.bg
+_alias .caffeine    zt.caffeine
+_alias .concerta    zt.concerta
+_alias .pm          zt.blister.night
+_alias .am          zt.blister.morning
+_alias .noon        zt.blister.noon
+_alias .humulog     zt.humulog
+_alias .melatonin   zt.melatonin
+_alias .metamucil   zt.metamucil
+_alias .trazadone   zt.trazodone
+_alias .zolpidem    zt.zolpidem
+
+_alias seagate  "/Volumes/SeagateBlue/mirrors/rsync.mirror.pumpkin.py"
+_alias prj      "pushd ~/prj"
+_alias l        "ls -G"
+_alias ll       "ls -1G"
+_alias bb       "bryan_buckets"
+_alias gits     ". :git.status"
