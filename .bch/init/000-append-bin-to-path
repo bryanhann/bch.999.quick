@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-:__bch:path:append $(dirname ${BASH_SOURCE[2]})/bin
-
