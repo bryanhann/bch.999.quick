@@ -15,7 +15,7 @@
 
     declare -f $1 > /dev/null && {
         echo ------------------------------------------------
-        declare -f $1 | fhelp.py
+        declare -f $1 | source.fhelp.py
         return
     }
     echo "[${FUNCNAME}]  in body"

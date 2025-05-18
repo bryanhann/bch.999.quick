@@ -31,7 +31,7 @@ def main():
     name = lines.pop(0).split()[0]
     print( f"{name}()" )
     for line in lines:
-        if line.startswith(':'):
+        if line.startswith(': '):
             line = line[2:-1]
             print( f"\t{line}" )
         continue
