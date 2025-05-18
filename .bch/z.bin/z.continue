@@ -1,2 +1,5 @@
 #!/bin/bash
+
+# make a continuation zjot
+
 zjot new ... "$@"

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# make a jot with tags.
+# make a jot with ad hoc tags.
 
 acc=""
 for tag in $*; do
-    acc="$acc {$tag}"
+    acc="$acc {.$tag}"
 done
 
 zjot new ${acc}

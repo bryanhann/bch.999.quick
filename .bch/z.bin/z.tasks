@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# show zjots that mark start or end of activity.
+# show zjots that mark start or end of a task
 
 bch.zjot show | grep '\zjot\].[-|+]'
 
