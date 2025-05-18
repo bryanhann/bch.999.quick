@@ -1,6 +1,6 @@
 #!/bin/bash
-.med \
-    [MORNING]: \
+
+zt.med {blister} morning : \
     fluoxetine=40 \
     concerta=36
-
+}

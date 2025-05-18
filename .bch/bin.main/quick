@@ -12,8 +12,10 @@ find-bin () {
 
 main () {
     echo "quick bins:"
-    for pth in $(find $(dirname $0) -name "bin.*" ); do
+    for pth in $(find . -name "*.bin" ); do
+    #for pth in $(find . -name "bin.*" ); do
         name=$(basename $pth)
+        name=$pth
         [ -d $pth ] && echo "    ${name}"
         [ -f $pth ] && echo "        ${name}:"
     done

@@ -1,0 +1,2 @@
+#!/bin/bash
+zt.med "{humulog}" $1

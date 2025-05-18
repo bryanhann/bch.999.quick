@@ -1,0 +1,4 @@
+#!/bin/bash
+
+zt.med {blister} noon : \
+    concerta=18

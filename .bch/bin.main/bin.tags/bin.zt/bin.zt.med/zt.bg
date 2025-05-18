@@ -1,0 +1,3 @@
+#!/bin/bash
+
+zt.med {bg} ${1}

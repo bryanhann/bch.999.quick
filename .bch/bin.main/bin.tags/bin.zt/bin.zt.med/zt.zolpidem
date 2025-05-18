@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 case .$1 in
-    .10|.5  ) .med "zolpidem=$1" ;;
+    .10|.5  ) tt.med "{zolpidem} $1 ;;
     *       ) echo BAD VALUE ;;
 esac
 

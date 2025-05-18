@@ -1,6 +1,6 @@
 #!/bin/bash
-.med \
-    [NIGHT] \
+
+zt.med {blister} night : \
     : ASA=81\
     : omeprazole=20 \
     : atorvastatin=40\

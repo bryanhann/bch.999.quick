@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# asp: as per scratch.
+# note something crossed off scratch page
+
+bch.zjot new "{aps}" "$@"
