@@ -1,4 +1,4 @@
 #!/bin/bash
 item=$1
 shift
-zjot new "[stok]" "$item=$@"
+zjot new "{stock}" "$item=$@"

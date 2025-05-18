@@ -1,2 +1,2 @@
 #!/bin/bash
-zjot new "[med]" "$@"
+zjot new "{med}" "$@"
