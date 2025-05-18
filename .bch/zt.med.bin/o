@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+_alias () {
+    local key=$1; shift;
+    alias $key="$@"
+}
+_alias .bg          zt.bg
+_alias .caffeine    zt.caffeine
+_alias .concerta    zt.concerta
+_alias .pm          zt.blister.night
+_alias .am          zt.blister.morning
+_alias .noon        zt.blister.noon
+_alias .humulog     zt.humulog
+_alias .melatonin   zt.melatonin
+_alias .metamucil   zt.metamucil
+_alias .trazadone   zt.trazodone
+_alias .zolpidem    zt.zolpidem
