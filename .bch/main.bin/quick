@@ -5,7 +5,7 @@ cd $(dirname $0)
 here=$PWD
 
 find-bin () {
-    for pth in $(find $here -name "bin.$1" ); do
+    for pth in $(find $here -name "$1.bin" ); do
         echo $pth
     done
 }

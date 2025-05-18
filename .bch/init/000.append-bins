@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-for pth in $(find $(dirname $(dirname ${BASH_SOURCE[0]})) -name bin.*); do
+#for pth in $(find $(dirname $(dirname ${BASH_SOURCE[0]})) -name bin.*); do
+for pth in $(find $(dirname $(dirname ${BASH_SOURCE[0]})) -name *.bin); do
     :__bch:path:append $pth
 done
 

@@ -1,2 +1,0 @@
-#!/bin/bash
-.food CHICKEN_PATTIE=$1 each=\$0.77
