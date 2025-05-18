@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+echo -------------------------------------------------------
+
+cd $(dirname $0)
+here=$PWD
+
+find-bin () {
+    for pth in $(find $here -name "bin.$1" ); do
+        echo $pth
+    done
+}
+
+main () {
+    echo "quick bins:"
+    for pth in $(find $(dirname $0) -name "bin.*" ); do
+        name=$(basename $pth)
+        [ -d $pth ] && echo "    ${name}"
+        [ -f $pth ] && echo "        ${name}:"
+    done
+    echo
+    echo "try 'quick main' or 'quick --all'"
+    echo
+}
+
+
+help-bin () {
+    bin=$(find-bin $1)
+    [ -z $bin ] && echo "quick: [$1] is not a bin" && main && return
+    echo quick commands at $(basename $bin):
+    ls -A -G $bin
+}
+
+help-all () {
+    for pth in $(find .); do
+        [ ! -f $pth ] && continue
+        printf "$(basename $pth) "
+    done
+}
+[ -z $1 ] && main && exit
+[ "$1" == "--all" ] && help-all && exit
+[ ! -z $1 ] && help-bin $1
+
