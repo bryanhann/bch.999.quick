@@ -12,11 +12,3 @@
     return 99
 }
 
-#case .$1 in .|.-h|.--help)cat<<EOF;;*)main $*;esac
-#usage:
-#    . $(basename ${BASH_SOURCE[0]}) <target>
-#description:
-#    wrap [which] to resolve symlinks.
-#EOF
-
-
