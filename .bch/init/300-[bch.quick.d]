@@ -3,7 +3,7 @@ qbin=~/.local/bin/bch.quick.d
 rm -rf $qbin
 mkdir -p $qbin
 :::append::: $qbin
-for pth in $(find ${BCH_QUICK__root}/.bch); do
+for pth in $(find ${BCH_QUICK__root}/.bch/__bin__); do
     [ -d $pth ] && continue
     [ -f $pth ] && ln -s $pth $qbin/$(basename $pth)
 done
