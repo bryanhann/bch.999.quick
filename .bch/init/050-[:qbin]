@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+qbin=~/.local/bin/bch.quick.d
+
+
+:quick () {
+    :::note::: "try [:qbin] to refresh qbin"
+    local flag=${qbin}/flag.qbin
+    [ $1. == -f. ] && rm -f ${flag}
+    [ -f ${flag} ] && return
+    rm -rf $qbin
+    mkdir -p $qbin
+    touch $flag
+    :::append::: $qbin
+
+    for pth in $(find ${BCH_QUICK__root}/.bch/__bin__); do
+        [ -d $pth ] && continue
+        [ -f $pth ] && ln -s $pth $qbin/$(basename $pth)
+        echo $pth
+    done
+}
+:qbin () {
+    :quick -f
+}
+
+:quick
+#for pth in $(find $(dirname $(dirname ${BASH_SOURCE[0]})) -name *.bin); do
+#    echo 88888888 $pth
+#    :::append::: $pth
+#done
+
