@@ -14,10 +14,17 @@ _alias .melatonin   zt.melatonin
 _alias .metamucil   zt.metamucil
 _alias .trazadone   zt.trazodone
 _alias .zolpidem    zt.zolpidem
-
+_alias .z           z
+_alias .stock       zt.stock
 _alias seagate  "/Volumes/SeagateBlue/mirrors/rsync.mirror.pumpkin.py"
 _alias prj      "pushd ~/prj"
 _alias l        "ls -G"
 _alias ll       "ls -1G"
 _alias bb       "bryan_buckets"
 _alias gits     ". :git.status"
+_alias push     "bch.zjot new {task} {+}"
+_alias pop      "bch.zjot new {task} {-}"
+_alias did      "bch.zjot new {task} {did}"
+_alias .grep    "bch.zjot show | grep"
+_alias .day     z.today
+_alias .o       z.do
