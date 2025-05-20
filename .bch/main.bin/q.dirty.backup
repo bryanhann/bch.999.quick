@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+[   -z $1 ] && exit
+[ ! -f $1 ] && exit
+
+for index in $(seq -w 1000); do
+    new=backup.${1}.${index}
+    [ -f $new  ] && continue
+    cp $1 $new
+    echo 888888888888888888 $index
+    break
+done

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+[   -z $1  ] &&  bch.zjot show | grep $(T.today)
+[ ! -z $1  ] &&  bch.zjot show | grep $(T.today) | grep $1
