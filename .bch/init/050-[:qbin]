@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-qbin=~/.local/bin/bch.quick.d
 
 
 :quick () {
+    local qbin=~/.local/bin/bch.quick.d
+    :::append::: $qbin
     :::note::: "try [:qbin] to refresh qbin"
     local flag=${qbin}/flag.qbin
     [ $1. == -f. ] && rm -f ${flag}
@@ -10,7 +11,6 @@ qbin=~/.local/bin/bch.quick.d
     rm -rf $qbin
     mkdir -p $qbin
     touch $flag
-    :::append::: $qbin
 
     for pth in $(find ${BCH_QUICK__root}/.bch/__bin__); do
         [ -d $pth ] && continue
