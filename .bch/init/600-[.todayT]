@@ -1,0 +1,3 @@
+.todayT () {
+    date "+%Y%m%dT"
+}

@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
+export BCH_QUICK__root=$(dirname $(dirname ${BASH_SOURCE[0]}))
+export BCH_QUICK__bin=${BCH_QUICK__root}/.bch.bin
+
 . $(dirname ${BASH_SOURCE[0]})/init/init.sh
