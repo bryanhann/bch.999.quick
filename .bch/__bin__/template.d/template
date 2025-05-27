@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+echo "usage:"
+echo "    $(basename $0) sh NAME [-e]"
+echo templates:
+for pth in $(ls -1 ${BCH_QUICK__files}/template.*); do
+    echo "    $(basename $pth)"
+done
+
+src=${BCH_QUICK__files}/template.$1
+dst=$2
+
+[ -f $src ] && cp $src $dst
+[ .$3 == .-e ] && vi $dst
