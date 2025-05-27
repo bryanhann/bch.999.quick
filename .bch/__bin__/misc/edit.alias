@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+vi ${BCH_QUICK__root}/.bch/init/700-alias
