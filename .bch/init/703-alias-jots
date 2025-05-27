@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+q:alias .push    "bch.task.push"
+q:alias .pop     "bch.task.pop"
+q:alias .reset   "bch.task.reset"
+q:alias .did     "bch.zjot new {task} {did}"
+q:alias .grep    "bch.zjot show | grep"
+q:alias .day     z.today
+q:alias .o       z.do

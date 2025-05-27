@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+q:alias () {
+    local key=$1; shift;
+    alias $key="$@"
+}

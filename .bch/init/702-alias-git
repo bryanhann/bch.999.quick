@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+q:alias gits     ". :git.status"
+q:alias gs       "git status"
+q:alias gd       "git diff"

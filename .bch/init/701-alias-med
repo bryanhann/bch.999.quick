@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+q:alias .z           z
+q:alias .bg          zt.bg
+q:alias .caffeine    zt.caffeine
+q:alias .concerta    zt.concerta
+q:alias .pm          zt.blister.night
+q:alias .am          zt.blister.morning
+q:alias .noon        zt.blister.noon
+q:alias .humulog     zt.humulog
+q:alias .melatonin   zt.melatonin
+q:alias .metamucil   zt.metamucil
+q:alias .trazadone   zt.trazodone
+q:alias .zolpidem    zt.zolpidem
+q:alias .stock       zt.stock
