@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-bch.cron.answer $1
+bch.kron.answer $1
 
