@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-
 :quick () {
     local qbin=~/.local/bin/bch.quick.d
-    :::append::: $qbin
-    :::note::: "try [:qbin] to refresh qbin"
+    bch:000:append $qbin
     local flag=${qbin}/flag.qbin
     [ $1. == -f. ] && rm -f ${flag}
     [ -f ${flag} ] && return
@@ -23,8 +21,6 @@
 }
 
 :quick
-#for pth in $(find $(dirname $(dirname ${BASH_SOURCE[0]})) -name *.bin); do
-#    echo 88888888 $pth
-#    :::append::: $pth
-#done
+
+bch:000:note "try [:qbin] to refresh qbin"
 
