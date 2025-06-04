@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-q:alias gits     ". :git.status"
+q:alias gits     ". q.stat-all-repos.sh"
 q:alias gs       "git status"
 q:alias gd       "git diff"

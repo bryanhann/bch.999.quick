@@ -5,12 +5,11 @@ usage:
     . $(basename ${BASH_SOURCE[0]})
 description:
     show the status of git repos directly under:
-        ${__BCH_ROOT__}
+        ${BCH_000_BCH_ROOT}
         ~/.prj
         ~
 EOF
-
-. :git.status.root ~
-. :git.status.root ${__BCH_ROOT__}
-. :git.status.root ~/prj
-
+. q.stat4root.sh ~/.local/share
+. q.stat4root.sh ~/prj
+. q.stat4root.sh ~
+. q.stat4root.sh ${BCH_000_BCH_ROOT}

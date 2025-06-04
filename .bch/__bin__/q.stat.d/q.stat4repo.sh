@@ -10,8 +10,6 @@ USAGE
 [ ! -d $1/.git ] && echo bad value && return
 
 pushd $1 > /dev/null
-    #echo aaa
     __git_ps1
     printf "\t$PWD\n"
-    #echo bbb
 popd > /dev/null
