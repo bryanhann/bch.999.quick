@@ -1,4 +1,0 @@
-#!/usr/bin/env  bash
-declare -f $1 | ${BASH_SOURCE[0]}.py
-#declare -f $1 | fhelp.py
-
