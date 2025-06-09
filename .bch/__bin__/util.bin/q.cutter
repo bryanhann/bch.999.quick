@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-uv run $0.py gh:bryanhann/cutter.base
+[ -z $1 ] && uv run $0.py gh:bryanhann/cutter.base
+[ -z $1 ] || uv run $0.py $1
+
