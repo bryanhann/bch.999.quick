@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 :go () {
-
+    : go NAME
+    :
+    : pushd to directory containing file NAME
     local target
     target=$(dirname $(my.which $1) 2>/dev/null) && {
         echo pushd to $target
