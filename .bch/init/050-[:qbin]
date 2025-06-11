@@ -2,7 +2,7 @@
 
 :quick () {
     local qbin=~/.local/bin/bch.quick.d
-    bch:000:append $qbin
+    ::append:: $qbin
     local flag=${qbin}/flag.qbin
     [ $1. == -f. ] && rm -f ${flag}
     [ -f ${flag} ] && return
