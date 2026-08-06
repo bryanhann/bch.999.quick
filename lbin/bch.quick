@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+$BH1
+0fds
+0magic  $*

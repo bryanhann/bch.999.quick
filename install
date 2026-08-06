@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+cd $(dirname $0) > /dev/null
+$BH1
+bh0 bch lbin4repo $PWD
+
+#lbin=$PWD/lbin
+#or name in $(ls $PWD/lbin | grep ^bch ); do
+#    real=$PWD/lbin/$name
+#    link=$HOME/.local/bin/$name
+#    [ -L $link ] && rm $link
+#    ln -s $real $link
+#done

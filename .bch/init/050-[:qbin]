@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+$BH1
 :quick () {
     local qbin=~/.local/bin/bch.quick.d
     ::append:: $qbin
@@ -22,5 +22,6 @@
 
 :quick
 
-bch:000:note "try [:qbin] to refresh qbin"
+0bold "try [:qbin] to refresh qbin"
+#bch:000:note "try [:qbin] to refresh qbin"
 
