@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+D=~/.tmp/bch.quick.check
+mkdir -p $D
+out=$D/$RANDOM
+$BH1
+for name in $(ls $BH0_BCH); do
+    cd $BH0_BCH/$name
+    git status -s > $out
+    [ -s $out ] && {
+        0bold "$name"
+        cat $out
+    }
+done
+cd ~/.BH0
+0bold $PWD
+git status -s
