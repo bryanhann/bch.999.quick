@@ -2,11 +2,6 @@
 import os
 from pathlib import Path
 import util as UU
-NIL = ''
-SPACE = ' '
-EXT='dart'
-PIPE='|'
-NEWLINE='\n'
 
 BCH0_DART = Path( os.environ.get(
     'BCH0_DART',

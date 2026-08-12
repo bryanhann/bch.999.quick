@@ -1,7 +1,7 @@
 from freezegun import freeze_time
-import dart as DART
+import darts as DART
 @freeze_time("1977-12-13")
 def test_foo():
-    dart =  DART.darts().pop(0)
+    dart =  DART.sample_darts(2).pop(0)
     assert dart.dateT == '19771213T'
 

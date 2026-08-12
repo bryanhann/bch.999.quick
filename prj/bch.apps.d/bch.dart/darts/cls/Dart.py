@@ -2,8 +2,8 @@
 
 from stamp import Stamp
 PIPE='|'
-class DartError(Exception):
-    pass
+#class DartError(Exception):
+from .DartError import DartError
 
 class Dart:
     def __init__(self, line):

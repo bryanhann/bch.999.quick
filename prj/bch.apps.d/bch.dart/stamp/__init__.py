@@ -1,2 +1,2 @@
-from .cls_Stamp import Stamp
-from .fun_stamp import stamp
+from .c_Stamp import Stamp
+from .f_stamp import stamp
