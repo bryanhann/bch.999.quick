@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+.bg () {
+    bch.notes note -tag med bg=$*
+}
