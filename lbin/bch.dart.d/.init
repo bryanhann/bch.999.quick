@@ -1,0 +1,7 @@
+#!/usr/local/bin
+name=$(basename $real)
+repo=$(dirname $(dirname $real))
+prj=$repo/prj
+app=$prj/bch.apps.d/$name/$name
+upper=$(echo $name | cut -d'.' -f2 | tr '[:lower:]' '[:upper:]')
+

@@ -1,1 +1,3 @@
 _hide
+__pycache__
+*.pyc

@@ -1,0 +1,8 @@
+#!/usr/bin/env
+[ x$(readlink $0) == x$real ] && {
+    export fin=exit
+    export dot=
+} || {
+    fin=return
+    dot=.
+} 

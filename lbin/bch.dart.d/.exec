@@ -1,0 +1,10 @@
+#/usr/bin/env bash
+if [ $1. == . ]; then 
+    source bch help4name $name 
+elif [ x${1:0:1} == x. ]; then
+    source bch help4name $name 
+elif [ -f $real.d/$1 ]; then
+    $dot $real.d/$@
+else
+    uv run --project $repo/prj $app "$@"
+fi
