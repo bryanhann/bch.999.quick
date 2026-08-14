@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+import sys
+import importlib.util
+from pathlib import Path
+HERE=Path.cwd()
+
+def modname4path(path):
+    return path.name.split('.')[0]
+
+
+def acceptable4obj(obj):
+    return str(obj.__doc__).strip().endswith('export')
+
+def names4mod(mod):
+    for name, obj in vars(mod).items():
+        if acceptable4obj(obj):
+            yield name
+
+def mod4path(path):
+    module_name = 'foo'
+    spec = importlib.util.spec_from_file_location(module_name, path)
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = mod
+    spec.loader.exec_module(mod)
+    return mod
+def main():
+    acc = []
+    for path in HERE.glob('f_[a-z]*.py'):
+        modname = modname4path(path)
+        mod = mod4path(path)
+        names = names4mod(mod)
+        for name in names:
+            line=f"from .{modname} import {name}"
+            print(line)
+            #acc.append(line)
+    #text='\n'.join(acc) + '\n'
+    #print( text )
+
+
+
+
+
+
+
+
+
+if __name__=='__main__':
+    main()
+
+def o():
+    """o: stub
+
+    exportable
+    """
+    stub = 'stub: o'
+    print(stub)
+    return stub
+def test_stub():
+    assert o() == 'stub: o'

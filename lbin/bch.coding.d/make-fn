@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+
+import sys
+from pathlib import Path
+
+HERE=Path.cwd()
+if '.' in HERE.name:
+    exit( 'cannot create in folder with dotted name')
+def main():
+    fn=sys.argv[1]
+    write_script4fn(fn)
+#    update_init4fn(fn)
+#    exercise4fn(fn)
+
+def exercise4fn(fn):
+    sys.path.append( str(HERE.parent) )
+    getattr(__import__(HERE.name),fn)()
+
+def update_init4fn(fn):
+    line=f"from .{mod4fn(fn)} import {fn}\n"
+    init=HERE/"__init__.py"
+    with init.open( 'a' ) as fd:
+        fd.write(line)
+
+def write_script4fn(fn):
+    script=script4fn(fn)
+    if script.exists():
+        exit( 'already created' )
+    script.write_text( template4fn(fn) )
+    script.chmod(0o777)
+
+def mod4fn(fn):
+    return f"f_{fn}"
+
+def script4fn(fn):
+    return Path(f"{mod4fn(fn)}.py")
+
+##############################################
+def template4fn(fn): return f"""\
+#!/usr/bin/env python3
+def {fn}():
+    \"\"\"{fn}: stub
+
+    export
+    \"\"\"
+    stub = 'stub: {fn}'
+    print(stub)
+    return stub
+def test_stub():
+    assert {fn}() == 'stub: {fn}'
+if __name__=='__main__':
+    {fn}()
+"""
+###########################################
+
+if __name__=='__main__':
+    main()

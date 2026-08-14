@@ -1,0 +1,9 @@
+These are quick and dirty coding tools.
+
+make-fn NAME:
+    create f_NAME.py containing stub function NAME
+
+make-init: 
+    cat a suitable __init__.py
+
+    look for objects with docstaring that ends 'export'
