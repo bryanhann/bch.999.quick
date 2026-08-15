@@ -1,6 +1,6 @@
 cd $(dirname $0)
-$BH1
 cd $(dirname $0) > /dev/null
+$BH1
 bh0 bch lbin4repo $PWD
 
 process () {
@@ -10,6 +10,7 @@ process () {
     ln -s $real $link
     echo installed $link 
 }
+echo 77
 for lbin in $(find $PWD/prj -name lbin); do
     for name in $(ls $lbin); do
         target=$lbin/$name
