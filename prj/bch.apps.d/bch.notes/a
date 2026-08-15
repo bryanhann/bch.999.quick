@@ -1,5 +1,0 @@
-for hh in $(seq -w 6 25); do
-    for mm in 00 15 30 45; do
-        echo ${hh}:${mm}
-    done
-done
