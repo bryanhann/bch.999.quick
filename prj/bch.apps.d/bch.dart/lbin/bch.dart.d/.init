@@ -1,7 +1,10 @@
 #!/usr/local/bin
 name=$(basename $real)
-repo=$(dirname $(dirname $real))
+repo=$real
+while [ ! -d $repo/.git ]; do
+    repo=$(dirname $repo)
+done
 prj=$repo/prj
-app=$prj/bch.apps.d/$name/$name
+app=$(dirname $(dirname $real))/$name
 upper=$(echo $name | cut -d'.' -f2 | tr '[:lower:]' '[:upper:]')
 

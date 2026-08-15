@@ -1,12 +1,19 @@
-#!/usr/bin/env bash
-cd $(dirname $0) > /dev/null
+cd $(dirname $0)
 $BH1
+cd $(dirname $0) > /dev/null
 bh0 bch lbin4repo $PWD
 
-#lbin=$PWD/lbin
-#or name in $(ls $PWD/lbin | grep ^bch ); do
-#    real=$PWD/lbin/$name
-#    link=$HOME/.local/bin/$name
-#    [ -L $link ] && rm $link
-#    ln -s $real $link
-#done
+process () {
+    real=$1
+    link=~/.local/bin/$(basename $1)
+    rm $link 2> /dev/null
+    ln -s $real $link
+    echo installed $link 
+}
+for lbin in $(find $PWD/prj -name lbin); do
+    for name in $(ls $lbin); do
+        target=$lbin/$name
+        [ -f $target ] && process $target
+    done
+done
+

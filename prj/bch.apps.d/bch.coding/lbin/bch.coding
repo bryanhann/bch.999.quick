@@ -1,6 +1,17 @@
 #/usr/bin/env bash
+$BH1
+real=$(readlink ${BASH_SOURCE[0]})
+[ ! -f $real.d/$1 ] && {
+    for name in $(ls $real.d); do
+        echo "    try: $(basename $real) $name"
+    done
+    exit
+}
+
+$real.d/$@
+exit
+
 bch_coding () { 
-    real=$(readlink ${BASH_SOURCE[0]})
     local cmd=$1
     shift
     [ ! x$cmd == x  ] && source $real.d/$cmd "$@"
