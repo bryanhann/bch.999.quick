@@ -1,0 +1,6 @@
+q_go_path4tag () {
+    for pth in $(q_go_tags); do
+        [ x$(basename $pth) == xq.fetch.$1 ] && echo $pth && return
+    done
+    return 1
+}

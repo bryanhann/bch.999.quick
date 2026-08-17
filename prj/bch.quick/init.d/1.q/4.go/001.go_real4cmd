@@ -1,0 +1,7 @@
+q_go_real4cmd () {
+    for cmd in $(q go cmds); do
+        [ x$cmd == x$1 ] && echo $(readlink ~/.local/bin/bch.$cmd)
+        [ x$cmd == x$1 ] && return 0
+    done
+    return 1
+}

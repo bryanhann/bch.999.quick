@@ -1,0 +1,7 @@
+q () { 
+    : "q x"  -- "q_x"
+    [ $1. == . ] && declare -F | grep q
+    [ $1. == . ] && q doc        4fn $FUNCNAME
+    [ $1. == . ] && return
+    q_$*
+};

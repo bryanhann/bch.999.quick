@@ -1,0 +1,11 @@
+q_help_4fn () {
+    : internal help
+    [ $1. == . ] && ${FUNCNAME[0]} ${FUNCNAME[0]}
+    [ $1. == . ] && return
+    q isfn $1 || {
+         echo not a function: $1
+         return 1
+    }
+    echo "$1()"
+    declare -f $1 | grep ^[[:space:]]*\:
+}

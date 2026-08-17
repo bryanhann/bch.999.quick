@@ -1,0 +1,9 @@
+q_go_2tag () {
+    target=$(q_go_path4tag $1) || return
+    real=$(dirname $target)
+    link=$HOME/$1
+    ln -s $real $link
+    pushd $link
+}
+
+

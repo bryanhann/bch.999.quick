@@ -1,0 +1,7 @@
+q_go_cmds () {
+    : "list   all   bch commands"
+    for name in $(ls ~/.local/bin | grep  ^bch\.); do
+        echo ${name:4}
+    done
+}
+

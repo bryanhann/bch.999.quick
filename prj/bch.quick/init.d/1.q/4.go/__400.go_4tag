@@ -1,0 +1,14 @@
+q_go_4cmd () {
+    :  fn NAME
+    :  pushd     to the folder containing lbin/bch.NAME
+    [ $1. == . ] && q help 4fn $FUNCNAME
+    [ $1. == . ] && return
+    for cmd in $(q cmd list); do
+        [ x$cmd == x$1 ] && {
+            real=$(readlink ~/.local/bin/bch.$cmd)
+            pushd $(dirname $real)  > /dev/null
+            return 0
+        }
+    done
+    return 1
+}

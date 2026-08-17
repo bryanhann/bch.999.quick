@@ -1,0 +1,6 @@
+q_isfn () {
+    [ $1. == . ] && return 1
+    declare -F $1 > /dev/null
+}
+
+    

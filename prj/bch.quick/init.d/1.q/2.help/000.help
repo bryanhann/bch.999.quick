@@ -1,0 +1,7 @@
+q_help () { 
+    : this is self help
+    [ $1. == . ] && declare -F | grep $FUNCNAME
+    [ $1. == . ] && return
+
+    q_help_$*
+};

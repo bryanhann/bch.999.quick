@@ -1,0 +1,4 @@
+q_go_2cmd () {
+    real=$(q go real4cmd $1) || return
+    pushd $(dirname $real)
+}
