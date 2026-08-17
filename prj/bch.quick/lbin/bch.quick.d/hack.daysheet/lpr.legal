@@ -1,0 +1,9 @@
+$!/usr/bin/env
+pushd $(dirname $0)
+./b.py | lpr -o media=legal
+./b.py | lpr -o media=legal
+./b.py | lpr -o media=legal
+./b.py | lpr -o media=legal
+./b.py | lpr -o media=legal
+./b.py | lpr -o media=legal
+./b.py | lpr -o media=legal

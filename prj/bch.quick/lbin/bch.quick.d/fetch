@@ -1,0 +1,21 @@
+q_fetch4name () {
+    for pth in $(find $BH0_BCH -name q.fetch.*); do
+        [ x$(basename $pth) == xq.fetch.$1 ] && echo $pth && return
+    done
+    return 1
+}
+q_fetch () {
+    target=$(q_fetch4name $1) || return
+    echo found $target
+    real=$(dirname $target)
+    link=$HOME/$1
+    
+    ln -s $real $link
+
+    pushd $link
+    #pushd ~/$name
+    #pushd $(dirname $real) >/dev/null
+    #echo good
+}
+
+q_fetch $1
