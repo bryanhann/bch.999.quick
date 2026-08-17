@@ -1,0 +1,6 @@
+link=$(which bch.$1) || {
+    echo bad >&2
+    exit 1
+}
+a=$(readlink $link) || exit 2
+echo $(dirname $(dirname $a))

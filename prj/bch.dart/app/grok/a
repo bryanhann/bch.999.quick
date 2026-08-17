@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+$BH1
+_die () {
+    return $1
+}
+funerr () { [ $?. == 0. ] && echo true || echo false; }
+fn () { [[ $(mod $1 2) -eq 0 ]] && ret true || ret false; }
+fn2 () { [ x$1 == x$2 ] && ret true || ret false ; }
+echo test1:
+seq 1 4 | filter λ a . '[[ $(mod $a 2) -eq 0 ]] && ret true || ret false'
+echo test2:
+seq 1 4 | filter λ a . '[[ $(mod $a 2) -eq 0 ]] && echo true || echo false'
+echo test3:
+seq 1 4 | filter λ a . '[[ $(mod $a 2) -eq 0 ]]; funerr'
+echo test4:
+seq 1 4 | filter λ a . 'fn a'
+echo test5:
+seq 1 4 | filter λ a . 'fn2 a 3'
+
+echo test6:
+fn2 3 3

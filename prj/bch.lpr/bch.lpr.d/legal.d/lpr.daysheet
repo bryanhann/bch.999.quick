@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+echo
+echo sending print jobs. Insure legal paper.
+echo press ENTER to continue
+read
+
+pushd $(dirname $0) > /dev/null
+for ii in $(seq 7); do
+    echo ./lpr.daysheet \| lpr -o media=legal
+done

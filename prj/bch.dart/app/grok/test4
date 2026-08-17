@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ./fn.sh
+cat ./sample.lower | stdin_upper  > o
+cmp ./o ./sample.upper && echo pass: $(basename $0)
+cmp ./o ./sample.upper || echo fail: $(basename $0)

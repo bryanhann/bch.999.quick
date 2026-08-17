@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-import fire
-from ui import *
-if __name__ == '__main__':
-    fire.Fire()
+$BH1
+this=$(0resolve ${BASH_SOURCE[0]})
+prj=$(dirname $(dirname $this))
+uv --project $prj run $(dirname $this)/app/$(basename $this) $*

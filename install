@@ -1,20 +1,13 @@
-cd $(dirname $0)
-cd $(dirname $0) > /dev/null
-$BH1
-bh0 bch lbin4repo $PWD
+#!/usr/bin/env bash
 
-process () {
-    real=$1
-    link=~/.local/bin/$(basename $1)
+cd $(dirname $0) > /dev/null
+
+for name in $(ls $PWD/prj | grep ^bch); do
+    real=$PWD/prj/$name/$name 
+    [ -f $real ] || continue
+    link=~/.local/bin/$(basename $real)
     rm $link 2> /dev/null
     ln -s $real $link
     echo installed $link 
-}
-echo 77
-for lbin in $(find $PWD/prj -name lbin); do
-    for name in $(ls $lbin); do
-        target=$lbin/$name
-        [ -f $target ] && process $target
-    done
 done
 

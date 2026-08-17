@@ -1,0 +1,12 @@
+
+f_argsc () {
+    case $1. in
+        --upper.)
+            echo "$@" | tr '[:lower:]' '[:upper:]'
+            ;;
+        --lower.)
+            echo "$@" | tr '[:upper:]' '[:lower:]'
+            ;;
+    esac
+}
+

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+$BH1
+this=$(0resolve ${BASH_SOURCE[0]})
+
+. $this.init/init.sh
+if [ -f $this.d/$1 ]; then
+    $this.d/$@
+    exit $?
+fi
+
+0bold commands:
+for name in $(ls $this.d); do
+    0bold "    $(basename $this) $name"
+done

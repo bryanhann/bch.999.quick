@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+export PATH=$PWD/bin:$PATH
+source fn.sh
+$BH1
+
+                      cat LOWER  | source loop > o
+verify o UPPER test1: cat LOWER \| source loop
+                      cat LOWER  | loop > o
+verify o UPPER test2: cat LOWER \| loop
+                      cat LOWER  | f_loop > o
+verify o UPPER test3: cat LOWER \| f_loop
+
+                      cat LOWER  | map f_args > o
+verify o UPPER test4: cat LOWER \| map f_args
+
+                      cat LOWER  | map f_argsc --lower > o
+verify o UPPER tes4c  cat LOWER \| map f_argsc --lower
+
+                      cat LOWER  | map . args > o
+verify o UPPER test5: cat LOWER \| map . args
+#                      cat LOWER  | map args > o
+#verify o UPPER test6: cat LOWER \| map args
+
+                      cat LOWER  | f_loopc --upper > o 
+verify o UPPER test7: cat LOWER \| f_loopc --upper 
+                      cat UPPER  | f_loopc --lower > o 
+verify o LOWER test8: cat UPPER \| f_loopc --lower 
+

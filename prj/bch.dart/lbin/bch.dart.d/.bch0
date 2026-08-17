@@ -1,3 +1,0 @@
-
-source bch0.$(echo $(basename $real) | cut -d'.' -f2) 2> /dev/null
-

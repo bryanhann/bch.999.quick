@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+echo $*
+opt=$1; shift
+case $opt. in
+    --upper.) 
+        echo "$@" | tr '[:lower:]' '[:upper:]'
+        ;;
+    --upper.) 
+        echo "$@" | tr '[:upper:]' '[:lower:]'
+        ;;
+esac

@@ -1,0 +1,27 @@
+rwhich () {
+    link=$(which bch.$1) || return
+    echo $(readlink $link)
+}
+
+$BH1
+real=$(rwhich $1)
+link=~/$1
+echo real: $real
+echo link: $link
+exit
+ln -s $real $link
+pushd $link
+exit
+app_path4name () {
+    for repo in $(ls -1 $BH0_BCH); do
+        target=bch.$1
+        for path in $(find $BH0_BCH/$repo -name $target); do
+            echo $path $1
+            break
+        done
+    done
+}
+app_path4name $1
+real=$(app_path4name $1)
+link=~/$1
+ln -s $real $link

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cat ./txt.lower | source ./read-up.sh > o
+./verify.sh sourcetest ./o ./txt.upper
