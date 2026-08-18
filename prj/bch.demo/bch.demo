@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+export SELF=SELF_$$
+_export () { export ${SELF}_$1=$2; }
+
+main() {
+   local this_this=$(readlink ${BASH_SOURCE[0]})
+   local this_name=$(basename $this_this)
+   local this_here=$(dirname $this_this)
+   local this_usr=$this_here/usr
+   local this_sys=$this_here/.sys
+   local this_prj=$(dirname $this_here)
+   local this_app=$this_here/app/main.py #$this_name
+   local this_root=$(dirname $this_prj)
+   local this_lib=$this_here/lib
+   local this_lib=$this_here/lib
+   [   "$0" == ${BASH_SOURCE[1]} ] && export this_dot=
+   [   "$0" == ${BASH_SOURCE[1]} ] && export this_fin=exit
+   [ ! "$0" == ${BASH_SOURCE[1]} ] && export this_dot=.
+   [ ! "$0" == ${BASH_SOURCE[1]} ] && export this_fin=return
+   source $this_sys/__vendor__
+   source $this_usr/__env__
+   if [ $1. == . ]; then
+        source $this_sys/__help__ | more -R
+        return $?
+   fi
+
+   if [ -f $this_usr/$1 ]; then
+        $this_dot $this_usr/"$@"
+        return $?
+   fi
+   _export NAME $this_name
+   export PYTHONPATH=$this_lib/python.lib:$PYTHONPATH   
+   uv run --project $this_prj $this_app $*
+}
+main "$*"
