@@ -10,7 +10,7 @@ cat $this_usr/__doc__  | foo
 
 echo
 clr_bold ENVIRONMENT:
-set | grep ^SELF_$$ | foo
+set | grep ^THIS_$$ | foo
 
 [ ! -f ~/DEBUG ] && return
 
