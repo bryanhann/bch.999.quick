@@ -1,32 +1,38 @@
 #!/usr/bin/env bash
 
-export this=$(readlink ${BASH_SOURCE[1]})
-
-export THIS=THIS_$$
-my_export () { export ${THIS}_$1=$2; }
-
 [   "$0" == ${BASH_SOURCE[1]} ] && export this_dot=
 [   "$0" == ${BASH_SOURCE[1]} ] && export this_fin=exit
 [ ! "$0" == ${BASH_SOURCE[1]} ] && export this_dot=.
 [ ! "$0" == ${BASH_SOURCE[1]} ] && export this_fin=return
-this_name=$(basename $this)
-this_here=$(dirname $this)
-this_usr=$this_here/usr
-this_sys=$this_here/.sys
-this_prj=$(dirname $this_here)
-this_app=$this_here/app/main.py #$this_name
-this_root=$(dirname $this_prj)
-this_lib=$this_here/lib
-this_cbdir=$HOME/.tmp/callback.$THIS.d
-this_cb=$this_cbdir/callback.sh
+
+export this_link=${BASH_SOURCE[1]}
+export this=$(readlink ${BASH_SOURCE[1]})
+
+export THIS=THIS_$$
+
+export this_name=$(basename $this_link)
+export this_here=$(dirname $this)
+export this_usr=$this_here/usr
+export this_sys=$this_here/.sys
+export this_prj=$(dirname $this_here)
+export this_app=$this_here/app/main.py #$this_name
+export this_root=$(dirname $this_prj)
+export this_lib=$this_here/lib
+export this_cbdir=$HOME/.tmp/callback.$THIS.d
+export this_cb=$this_cbdir/callback.sh
 
 mkdir -p $this_cbdir
 touch $this_cb
-source $this_sys/_vendor
-source $this_usr/__env__
+
+my_export () { export ${THIS}_$1=$2; }
 my_export NAME     $this_name
 my_export CALLBACK $this_cb
-export __init__="source ${this_sys}/_vendor"
+
+export __init__="source ${this_sys}/_handle"
+source ${this_sys}/_init
+source $this_usr/__env__
+
+
 
 
 
