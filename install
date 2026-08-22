@@ -1,13 +1,33 @@
 #!/usr/bin/env bash
-
 cd $(dirname $0) > /dev/null
-
+source  $PWD/.vendor.d/bash_colors.sh
+repo=$(basename $PWD)
+clr_bold  "[$repo]/install"
+cd prj
+uv sync
+cd ..
 for name in $(ls $PWD/prj | grep ^bch); do
     real=$PWD/prj/$name/$name 
     [ -f $real ] || continue
     link=~/.local/bin/$(basename $real)
     rm $link 2> /dev/null
     ln -s $real $link
-    echo installed $link 
+    echo installed ${link:${#prefix}} 
 done
 
+
+myls () {
+    for name in $(ls $1); do
+        echo $1/$name
+    done
+}
+dotinstall () {
+    local target
+    while read path; do
+        target=$path/.install
+        [ ! -f $target ] && continue
+        $target
+    done
+}
+prefix=$PWD
+myls $PWD/prj | dotinstall
